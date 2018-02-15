@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq;
 
-namespace Olmelabs.Algorithms.Chapter3.Arrays
+namespace Olmelabs.Algorithms.Chapter3
 {
     /// <summary>
     /// Program 3.7. Coin-flipping simulation

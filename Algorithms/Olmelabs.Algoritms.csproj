@@ -44,8 +44,12 @@
     <Compile Include="Chapter1\QuickUnion.cs" />
     <Compile Include="Chapter1\QuickFind.cs" />
     <Compile Include="Chapter2\Counter.cs" />
-    <Compile Include="Chapter3\Arrays\CoinFlipping.cs" />
-    <Compile Include="Chapter3\Arrays\SieveOfEratosthenes.cs" />
+    <Compile Include="Chapter3\CoinFlipping.cs" />
+    <Compile Include="Chapter3\LinkedListInsertionSort.cs" />
+    <Compile Include="Chapter3\LinkedListReversal.cs" />
+    <Compile Include="Chapter3\LinkedListNode.cs" />
+    <Compile Include="Chapter3\SieveOfEratosthenes.cs" />
+    <Compile Include="Chapter3\JosephusProblem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

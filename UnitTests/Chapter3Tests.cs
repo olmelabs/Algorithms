@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Olmelabs.Algorithms.Chapter3.Arrays;
+using Olmelabs.Algorithms.Chapter3;
 
 namespace Olmelabs.Algorithms.UnitTests
 {
@@ -23,6 +23,35 @@ namespace Olmelabs.Algorithms.UnitTests
         {
             CoinFlipping t = new CoinFlipping(50, 1000);
             t.DoFlip();
+        }
+
+        [TestMethod]
+        public void JosephusProblemTest()
+        {
+            JosephusProblem t = new JosephusProblem(9, 5);
+            t.KillThemAll();
+        }
+
+        [TestMethod]
+        public void LinkedListReversalTest()
+        {
+            LinkedListReversal t = new LinkedListReversal();
+
+            var x = t.BuildList(5);
+            Assert.AreEqual(x.ToString(), "1 -> 2 -> 3 -> 4 -> 5");
+
+
+            var r = t.ReverseList(x);
+            Assert.AreEqual(r.ToString(), "5 -> 4 -> 3 -> 2 -> 1");
+        }
+
+        [TestMethod]
+        public void LinkedListInsertionSort()
+        {
+            LinkedListInsertionSort t = new LinkedListInsertionSort();
+
+            var x = t.BuildList(5);
+            var r = t.SortList(x);
         }
     }
 }
