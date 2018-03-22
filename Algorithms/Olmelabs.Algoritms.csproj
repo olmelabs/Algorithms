@@ -50,8 +50,11 @@
     <Compile Include="Chapter3\LinkedListNode.cs" />
     <Compile Include="Chapter3\SieveOfEratosthenes.cs" />
     <Compile Include="Chapter3\JosephusProblem.cs" />
+    <Compile Include="Chapter4\FifoQueueArray.cs" />
     <Compile Include="Chapter4\StackCalculator.cs" />
     <Compile Include="Chapter4\StackConvertInfixToPostfix.cs" />
+    <Compile Include="Chapter5\EuclidsAlgorithm.cs" />
+    <Compile Include="Chapter5\FindMax.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

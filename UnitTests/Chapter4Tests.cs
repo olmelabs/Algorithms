@@ -25,5 +25,20 @@ namespace Olmelabs.Algorithms.UnitTests
             string res = c.Convert("(5*(((9+8)*(4*6))+7)");
             Assert.AreEqual("5 9 8 + 4 6 * * 7 + * ", res);
         }
+
+        [TestMethod]
+        public void FifoQueueArrayTest()
+        {
+            FifoQueueArray q = new FifoQueueArray(10);
+
+            //test circular array
+            for (int i = 0; i < 20; i++)
+            {
+                q.Put(i * 10);
+            }
+            
+
+            var x = q.Get();
+        }
     }
 }
