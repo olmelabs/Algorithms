@@ -44,7 +44,7 @@ namespace Olmelabs.Algorithms.Chapter1
                 }
                 for (j = q; j != _id[j]; j = _id[j])
                 {
-                    //Trace.WriteLine($"  j = {j}");
+                   //Trace.WriteLine($"  j = {j}");
                 }
 
                 if (i == j)

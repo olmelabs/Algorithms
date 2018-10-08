@@ -10,8 +10,10 @@ namespace Olmelabs.Algorithms.UnitTests
         public void StackCalculatorTest()
         {
             StackCalculator c = new StackCalculator();
+            int res = c.Calculate("1 3 + 6 2 * 7 + *");
+            Assert.AreEqual(76, res);
 
-            int res = c.Calculate("5 9 8 + 4 6 * * 7 + *");
+            res = c.Calculate("5 9 8 + 4 6 * * 7 + *");
             Assert.AreEqual(2075, res);
 
             res = c.Calculate("500 10 *");

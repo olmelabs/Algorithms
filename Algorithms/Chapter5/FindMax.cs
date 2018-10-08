@@ -4,6 +4,9 @@ using System.Diagnostics;
 
 namespace Olmelabs.Algorithms.Chapter5
 {
+    /// <summary>
+    /// Program 5.6. Divide-and-conquer to find the maximum
+    /// </summary>
     public class FindMax
     {
         public int[] CreateArray(int n)

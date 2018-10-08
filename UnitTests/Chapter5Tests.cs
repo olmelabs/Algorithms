@@ -29,5 +29,91 @@ namespace Olmelabs.Algorithms.UnitTests
 
             Assert.AreEqual(arr.Max(), max);
         }
+
+
+        [TestMethod]
+        public void DrawARuler()
+        {
+            DrawARuler c = new DrawARuler();
+            c.Rule(0, 8, 3);
+            c.RuleNonRecursive(0, 8, 3);
+        }
+
+        [TestMethod]
+        public void Fibonacci()
+        {
+            Fibonacci f = new Fibonacci();
+            //int res1 = f.F(6);
+            int res2 = f.F_Dynamic(6);
+        }
+
+        [TestMethod]
+        public void TreeTraverseRecursive()
+        {
+            TreeNode<string> root = BuildTree();
+
+            TreeTraversal<string> t = new TreeTraversal<string>();
+            t.TraverseRecursive(root);
+        }
+
+        [TestMethod]
+        public void TreeTraverseWithStack()
+        {
+            TreeNode<string> root = BuildTree();
+
+            TreeTraversal<string> t = new TreeTraversal<string>();
+            t.TraverseWithStack(root);
+        }
+
+        [TestMethod]
+        public void TreeTraverseWithQueue()
+        {
+            TreeNode<string> root = BuildTree();
+
+            TreeTraversal<string> t = new TreeTraversal<string>();
+            t.TraverseWithQueue(root);
+        }
+
+        [TestMethod]
+        public void TreeNodeCount()
+        {
+            TreeNode<string> root = BuildTree();
+
+            TreeTraversal<string> t = new TreeTraversal<string>();
+            int res = t.Count(root);
+
+            Assert.AreEqual(8, res);
+        }
+
+        [TestMethod]
+        public void TreeHeight()
+        {
+            TreeNode<string> root = BuildTree();
+
+            TreeTraversal<string> t = new TreeTraversal<string>();
+            int res = t.Height(root);
+
+            Assert.AreEqual(3, res);
+        }
+
+        private TreeNode<string> BuildTree()
+        {
+            TreeNode<string> n = new TreeNode<string>("E",
+                new TreeNode<string>("D",
+                    new TreeNode<string>("B",
+                        new TreeNode<string>("A"),
+                        new TreeNode<string>("C")
+                        ),
+                    null
+                ),
+                new TreeNode<string>("H",
+                    new TreeNode<string>("F",
+                        null,
+                        new TreeNode<string>("G")),
+                    null
+                )
+            );
+            return n;
+        }
     }
 }
