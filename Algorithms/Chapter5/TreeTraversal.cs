@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 /// <summary>
@@ -10,19 +11,19 @@ namespace Olmelabs.Algorithms.Chapter5
 {
     public class TreeNode<T>
     {
-        public TreeNode(T node)
+        public TreeNode(T item)
         {
-            Node = node;
+            Item = item;
         }
 
-        public TreeNode(T node, TreeNode<T> left, TreeNode<T> right)
+        public TreeNode(T item, TreeNode<T> left, TreeNode<T> right)
         {
-            Node = node;
+            Item = item;
             Left = left;
             Right = right;
         }
 
-        public T Node;
+        public T Item;
 
         public TreeNode<T> Left;
 
@@ -30,7 +31,7 @@ namespace Olmelabs.Algorithms.Chapter5
 
         public override string ToString()
         {
-            return Node.ToString();
+            return Item.ToString();
         }
     }
 
@@ -38,7 +39,7 @@ namespace Olmelabs.Algorithms.Chapter5
     /// Program 5.14. Recursive tree traversal
     /// </summary>
     /// <typeparam name="T">class</typeparam>
-    public class TreeTraversal<T> where T: class
+    public class TreeTraversal<T> where T: IComparable
     {
         public void TraverseRecursive(TreeNode<T> root, string space = "")
         {
@@ -53,7 +54,7 @@ namespace Olmelabs.Algorithms.Chapter5
         }
 
         /// <summary>
-        /// Program 5.15. Preorder traversal (nonrecursive)
+        /// Program 5.15. Preorder traversal (nonrecursive).  Depth-first
         /// </summary>
         /// <param name="root"></param>
         public void TraverseWithStack(TreeNode<T> root)
@@ -80,7 +81,7 @@ namespace Olmelabs.Algorithms.Chapter5
         }
 
         /// <summary>
-        /// Program 5.16. Level-order traversal
+        /// Program 5.16. Level-order traversal. Breadth-first
         /// </summary>
         /// <param name="root"></param>
         public void TraverseWithQueue(TreeNode<T> root)
@@ -134,6 +135,34 @@ namespace Olmelabs.Algorithms.Chapter5
             int rh = Height(root.Right);
 
             return lh > rh ? lh + 1 : rh + 1;
+        }
+
+
+        /// <summary>
+        ///  Explicit tree for finding the maximum (tournament)
+        /// Program 5.19. Construction of a tournament
+        /// </summary>
+        /// <param name="items">items</param>
+        /// <param name="left">left pos</param>
+        /// <param name="right">right pos</param>
+        /// <returns>max value</returns>
+        public TreeNode<T> Max(T[] items, int left, int right)  
+        {
+            int middle = (left + right) / 2;
+            TreeNode<T> x = new TreeNode<T>(items[middle]);
+
+            if (left == right)
+                return x;
+
+            x.Left = Max(items, left, middle);
+            x.Right = Max(items, middle + 1, right);
+
+            T u = x.Left.Item;
+            T v = x.Right.Item;
+
+            x.Item  = (u.CompareTo(v) > 0) ? u : v;
+
+            return x;
         }
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="Chapter5\EuclidsAlgorithm.cs" />
     <Compile Include="Chapter5\Fibonacci.cs" />
     <Compile Include="Chapter5\FindMax.cs" />
+    <Compile Include="Chapter5\GraphTraversal.cs" />
     <Compile Include="Chapter5\TreeTraversal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

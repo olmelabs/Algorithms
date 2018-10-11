@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Olmelabs.Algorithms.Chapter5;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Olmelabs.Algorithms.UnitTests
@@ -96,6 +97,41 @@ namespace Olmelabs.Algorithms.UnitTests
             Assert.AreEqual(3, res);
         }
 
+        [TestMethod]
+        public void TreeFindMax()
+        {
+            TreeTraversal<string> t = new TreeTraversal<string>();
+
+            string[] patterns = new[] { "A", "M", "P", "L", "E" };
+            TreeNode<string> max = t.Max(patterns, 0, patterns.Length - 1);
+            Assert.AreEqual("P", max.Item);
+
+            patterns = new[] { "recursive", "program", "that", "builds", "a", "tournament" };
+            max = t.Max(patterns, 0, patterns.Length - 1);
+
+            Assert.AreEqual("tournament", max.Item);
+        }
+
+
+        [TestMethod]
+        public void GraphTraverseWithRecursion()
+        {
+            GraphNode<int> node = BuildGraph();
+
+            GraphTraversal<int> t = new GraphTraversal<int>();
+            t.Traverse(node);
+        }
+
+
+        [TestMethod]
+        public void GraphTraverseWithQueue()
+        {
+            GraphNode<int> node = BuildGraph();
+
+            GraphTraversal<int> t = new GraphTraversal<int>();
+            t.TraverseWithQueue(node);
+        }
+
         private TreeNode<string> BuildTree()
         {
             TreeNode<string> n = new TreeNode<string>("E",
@@ -114,6 +150,29 @@ namespace Olmelabs.Algorithms.UnitTests
                 )
             );
             return n;
+        }
+
+        private GraphNode<int> BuildGraph()
+        {
+            GraphNode<int> n0 = new GraphNode<int>(0);
+            GraphNode<int> n1 = new GraphNode<int>(1);
+            GraphNode<int> n2 = new GraphNode<int>(2);
+            GraphNode<int> n3 = new GraphNode<int>(3);
+            GraphNode<int> n4 = new GraphNode<int>(4);
+            GraphNode<int> n5 = new GraphNode<int>(5);
+            GraphNode<int> n6 = new GraphNode<int>(6);
+            GraphNode<int> n7 = new GraphNode<int>(7);
+
+            n0.ConnectedItems.AddRange(new[] { n7 });
+            n1.ConnectedItems.AddRange(new[] { n7 });
+            n2.ConnectedItems.AddRange(new[] { n7 });
+            n3.ConnectedItems.AddRange(new[] { n5 });
+            n4.ConnectedItems.AddRange(new[] { n5, n6, n7 });
+            n5.ConnectedItems.AddRange(new[] { n3, n4 });
+            n6.ConnectedItems.AddRange(new[] { n4 });
+            n7.ConnectedItems.AddRange(new[] { n0, n1, n2, n4 });
+
+            return n0;
         }
     }
 }
