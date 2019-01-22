@@ -51,5 +51,14 @@ namespace Olmelabs.Algorithms.UnitTests
 
             CollectionAssert.AreEqual(_sortedItems, _items);
         }
+
+        [TestMethod]
+        public void ShellSort()
+        {
+            Sorting<string> s = new Sorting<string>();
+            s.ShellSort(_items, 0, _items.Length - 1);
+
+            CollectionAssert.AreEqual(_sortedItems, _items);
+        }
     }
 }

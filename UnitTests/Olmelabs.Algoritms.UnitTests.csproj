@@ -56,6 +56,7 @@
     <Compile Include="Chapter3Tests.cs" />
     <Compile Include="Chapter4Tests.cs" />
     <Compile Include="Chapter5Tests.cs" />
+    <Compile Include="Chapter7Tests.cs" />
     <Compile Include="Chapter6Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Chapter2Tests.cs" />

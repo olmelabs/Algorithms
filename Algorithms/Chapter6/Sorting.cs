@@ -28,7 +28,6 @@ namespace Olmelabs.Algorithms.Chapter6
             {
                 for (int j = i; j > l; j--)
                 {
-                    iterationCounter++;
                     CompareExchange(ref items[j - 1], ref items[j]);
                 }
             }
@@ -106,5 +105,29 @@ namespace Olmelabs.Algorithms.Chapter6
                 }
             }
         }
+
+        /// <summary>
+        /// insertion nonadaptive sort
+        /// Program 6.5. Shellsort
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public void ShellSort(T[] items, int l, int r)
+        {
+            int h;
+            for (h = 1; h <= (r-l)/9; h = 3*h + 1);
+            for (; h > 0; h /= 3)
+            {
+                for (int i = l + h; i <= r; i++)
+                {
+                    int j = i; T v = items[i];
+                    while (j >= l + h && v.CompareTo(items[j - h]) < 0)
+                    {
+                        items[j] = items[j - h]; j -= h;
+                    }
+                    items[j] = v;
+                }
+            }
+        }
+
     }
 }

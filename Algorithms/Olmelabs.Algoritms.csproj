@@ -60,6 +60,7 @@
     <Compile Include="Chapter5\GraphTraversal.cs" />
     <Compile Include="Chapter5\TreeTraversal.cs" />
     <Compile Include="Chapter6\Sorting.cs" />
+    <Compile Include="Chapter7\QuickSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
