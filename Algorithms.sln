@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olmelabs.Algoritms", "Algorithms\Olmelabs.Algoritms.csproj", "{314A4922-46EB-4048-B111-2AD005B3D315}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olmelabs.Algorithms", "Algorithms\Olmelabs.Algorithms.csproj", "{314A4922-46EB-4048-B111-2AD005B3D315}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olmelabs.Algoritms.UnitTests", "UnitTests\Olmelabs.Algoritms.UnitTests.csproj", "{EE228294-42E1-4132-9F64-A41357F891B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olmelabs.Algorithms.UnitTests", "UnitTests\Olmelabs.Algorithms.UnitTests.csproj", "{EE228294-42E1-4132-9F64-A41357F891B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
