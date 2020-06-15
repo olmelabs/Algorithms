@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Olmelabs.Algorithms.Chapter5;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Olmelabs.Algorithms.UnitTests

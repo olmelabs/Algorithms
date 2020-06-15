@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Olmelabs.Algorithms.Chapter5
+﻿namespace Olmelabs.Algorithms.Chapter5
 {
     /// <summary>
     /// Program 5.3. Euclid's algorithm

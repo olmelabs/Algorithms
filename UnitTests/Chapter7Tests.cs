@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Olmelabs.Algorithms.Chapter6;
 using Olmelabs.Algorithms.Chapter7;
 
 namespace Olmelabs.Algorithms.UnitTests
