@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Olmelabs.Algorithms.Chapter5;
 using System.Linq;
 
@@ -37,6 +38,23 @@ namespace Olmelabs.Algorithms.UnitTests
             DrawARuler c = new DrawARuler();
             c.Rule(0, 8, 3);
             c.RuleNonRecursive(0, 8, 3);
+        }
+
+        [TestMethod]
+        public void Knapsack()
+        {
+            var items = new List<Knapsack.Item>
+            {
+                new Knapsack.Item{size = 3, val= 4},
+                new Knapsack.Item{size = 4, val= 5},
+                new Knapsack.Item{size = 7, val= 10},
+                new Knapsack.Item{size = 8, val= 11},
+                new Knapsack.Item{size = 9, val= 13}
+            };
+
+            Knapsack kc = new Knapsack(items);
+            var res = kc.KnapSimple(17);
+            var res2 = kc.KnapSimple2(items.Count-1, 17);
         }
 
         [TestMethod]
